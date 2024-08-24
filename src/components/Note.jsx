@@ -28,21 +28,21 @@ const Note = ({ id, note }) => {
 
   return (
     <div className="m-2">
-      <div className="h-72 w-72 bg-white relative shadow-md rounded-md">
-        <div className="flex justify-between p-1 px-2">
-          <div className="text-sm text-slate-400">{note.date}</div>
-          <div className="flex gap-2 text-slate-400">
+      <div className={`h-72 w-72 bg-yellow-50  relative shadow-md rounded-md`}>
+        <div className="flex justify-between p-2 px-4">
+          <div className="text-sm text-slate-600">{note.date}</div>
+          <div className="flex gap-4 text-slate-600">
             <button
-              className="rounded-sm hover:bg-green-400 px-1 hover:text-black"
+              className="rounded-sm hover:bg-green-400 px-1 hover:text-black hover:scale-110"
               onClick={handleEdit}
             >
               <FiEdit size={18} />
             </button>
             <button
-              className="rounded-sm hover:bg-red-500 hover:text-black"
+              className="rounded-sm hover:bg-red-500 hover:text-black hover:scale-110"
               onClick={() => handleDelete(id)}
             >
-              <MdOutlineDelete size={20} />
+              <MdOutlineDelete size={22} />
             </button>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Note = ({ id, note }) => {
             <div className="whitespace-pre-wrap ">{content}</div>
           )}
         </div>
-        <div className="absolute bottom-2 right-2 text-sm text-slate-400">
+        <div className="absolute bottom-2 right-2 text-sm text-slate-600">
           {note.time}
         </div>
       </div>

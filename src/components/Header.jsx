@@ -28,11 +28,8 @@ const Header = () => {
             className="flex items-center justify-center bg-[#08B27E] rounded-xl p-2 text-white"
             onClick={handleAddNewClick}
           >
-            <RiFileAddLine />
-            <span className="ml-2">Add new</span>
-          </button>
-          <button className="bg-[#F2FFFF] p-2 rounded-md text-gray-700">
-            Login
+            <RiFileAddLine size={22}/>
+            <span className="ml-2 font-semibold">Add new</span>
           </button>
         </div>
       </div>
