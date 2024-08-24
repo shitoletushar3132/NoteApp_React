@@ -8,7 +8,7 @@ const Header = () => {
   const handleAddNewClick = () => {
     const newNoteData = {
       id: Date.now(),
-      content: "Add here note",
+      content: "To add note click edit button👆",
       date: new Date().toLocaleDateString(),
       time: new Date().toLocaleTimeString([], {
         hour: "2-digit",
