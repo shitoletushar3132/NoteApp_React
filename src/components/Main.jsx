@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Background from "../assets/Background.jpg";
+import Background from "../assets/Background2.jpg";
 import Note from "./Note";
 import { NotesContext } from "../context/NotesContext";
 
@@ -14,7 +14,7 @@ const Main = () => {
         height: "calc(100vh - 112px)",
       }}
     >
-      <div className="bg-[black] bg-opacity-50 h-full overflow-y-scroll">
+      <div className="bg-[black] bg-opacity-25 h-full overflow-y-scroll">
         <div className="flex justify-center items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {notes.map((note) => (
