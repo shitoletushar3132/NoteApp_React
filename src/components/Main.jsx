@@ -16,7 +16,7 @@ const Main = () => {
     >
       <div className="bg-[black] bg-opacity-25 h-full overflow-y-scroll">
         <div className="flex justify-center items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-5">
             {notes.map((note) => (
               <Note id={note.id} key={note.id} note={note} />
             ))}
