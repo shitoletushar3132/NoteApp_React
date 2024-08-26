@@ -28,7 +28,7 @@ const Header = () => {
             className="flex items-center justify-center bg-[#08B27E] rounded-xl p-2 text-white"
             onClick={handleAddNewClick}
           >
-            <RiFileAddLine size={22}/>
+            <RiFileAddLine size={22} />
             <span className="ml-2 font-semibold">Add new</span>
           </button>
         </div>
