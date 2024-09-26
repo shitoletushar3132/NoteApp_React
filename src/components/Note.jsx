@@ -17,18 +17,40 @@ const Note = ({ id, note }) => {
     setContent(e.target.value);
   };
 
-  const handleSave = (e) => {
+  const handleSave = () => {
     setIsEditing(false);
-    editNote(id, e.target.value);
+    editNote(id, content);
   };
 
   const handleDelete = (noteId) => {
     deleteNote(noteId);
   };
 
+  // Function to convert URLs to clickable links with blue color
+  const convertToLinks = (text) => {
+    const urlPattern = /(https?:\/\/[^\s]+)/g;
+    return text.replace(
+      urlPattern,
+      (url) =>
+        `<a href="${url}" target="_blank" style="color: blue;">${url}</a>`
+    );
+  };
+
+  const convertToStyledText = (text) => {
+    text = text.replace(/\*\*(.*?)\*\*/g, "<b>$1</b>");
+    text = text.replace(/_(.*?)_/g, "<i>$1</i>");
+    return text;
+  };
+
+  const renderContent = (text) => {
+    let styledText = convertToStyledText(text);
+    styledText = convertToLinks(styledText);
+    return { __html: styledText };
+  };
+
   return (
     <div className="m-2">
-      <div className={`h-72 w-72 bg-yellow-50  relative shadow-md rounded-md`}>
+      <div className={`h-72 w-72 bg-yellow-50 relative shadow-md rounded-md`}>
         <div className="flex justify-between p-2 px-4">
           <div className="text-sm text-slate-600">{note.date}</div>
           <div className="flex gap-4 text-slate-600">
@@ -56,7 +78,11 @@ const Note = ({ id, note }) => {
               autoFocus
             />
           ) : (
-            <div className="whitespace-pre-wrap ">{content}</div>
+            // Render content as HTML with links and styles
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={renderContent(content)}
+            ></div>
           )}
         </div>
         <div className="absolute bottom-2 right-2 text-sm text-slate-600">
